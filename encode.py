@@ -2,7 +2,10 @@ from waveformEncoder import AudioWaveformEncoder
 
 encoder = AudioWaveformEncoder(pauseGeneration=True)
 
-message = input("Enter a message to encode: ")
+while True:
+    message = input("Enter a message to encode: ")
+    if message != "": break
+    print("The message cannot be empty!")
 
 data = encoder.runScrambleMethod(message)
 

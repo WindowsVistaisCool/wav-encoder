@@ -76,7 +76,7 @@ class AudioWaveformDecoder:
             if freq == 0:
                 if len(bitCollection) > 0:
                     collectedData.append(''.join(bitCollection).encode('ascii'))
-                    print(bitCollection)
+                    if verbose: print(bitCollection)
                     bitCollection = []
                     continueOnSpace = True
             elif freq < 100:
@@ -107,3 +107,6 @@ class AudioWaveformDecoder:
         idx = np.argmax(np.abs(yf))
         freq = xf[idx]
         return freq
+
+if __name__ == '__main__':
+    print("Run the encode.py or decode.py file instead.")
